@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#3f5cff">
+
+    <ImageView
+        android:id="@+id/loginIcon2"
+        android:layout_width="128dp"
+        android:layout_height="123dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="124dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/login_icon" />
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="388dp"
+        android:layout_height="262dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="280dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/edge1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="30dp">
+
+            <TextView
+                android:id="@+id/idTextView"
+                android:layout_width="76dp"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:text="아이디  "
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/joinId"
+                android:layout_width="197dp"
+                android:layout_height="match_parent"
+                android:ems="10"
+                android:hint="ID 입력"
+                android:inputType="textPersonName" />
+
+            <Button
+                android:id="@+id/joinIdCheck"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:layout_marginStart="5dp"
+                android:gravity="center"
+                android:text="중복확인"
+                android:textColor="#000000"
+                app:backgroundTint="#E2EDFF"
+                tools:textSize="12sp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="30dp">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:text="비밀번호  "
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/joinPwd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="비밀번호 입력"
+                android:inputType="textPassword" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="30dp">
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:text="이메일  "
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/joinEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="ex) abc@abc.com"
+                android:inputType="textPersonName" />
+        </TableRow>
+    </TableLayout>
+
+    <Button
+        android:id="@+id/joinDone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="회원가입 완료하기"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:backgroundTint="#E2EDFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
+
+    <TextView
+        android:id="@+id/comment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="당신에게 꿈을 속삭여요"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/loginIcon2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

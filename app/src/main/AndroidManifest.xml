@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.bankofthebest">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <application
+        android:name="com.example.bankofthebest.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/icon_launcher"
+        android:label="BoB"
+        android:roundIcon="@mipmap/icon_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.WhisperApp">
+        <activity android:name="com.example.bankofthebest.mypage.mypageMainActivity"></activity>
+        <activity android:name="com.example.bankofthebest.todo.EditTodoActivity" />
+        <activity android:name="com.example.bankofthebest.portfolio.PortRegActivity" />
+        <activity android:name="com.example.bankofthebest.portfolio.PortMainActivity" />
+        <activity android:name="com.example.bankofthebest.event.EventItemActivity" />
+        <activity android:name="com.example.bankofthebest.event.AddPostActivity" />
+        <activity android:name="com.example.bankofthebest.event.WebViewActivity" />
+        <activity android:name="com.example.bankofthebest.event.EventListActivity" />
+        <activity android:name="com.example.bankofthebest.community.MainCommuActivity" />
+        <activity android:name="com.example.bankofthebest.community.AddCommentActivity" />
+        <activity android:name="com.example.bankofthebest.community.ContentActivity" />
+        <activity android:name="com.example.bankofthebest.community.RegCommuActivity" />
+        <activity android:name="com.example.bankofthebest.MainActivity" />
+        <activity android:name="com.example.bankofthebest.todo.TodoActivity"/>
+        <activity android:name="com.example.bankofthebest.login.JoinActivity" />
+        <activity android:name="com.example.bankofthebest.AwardsActivity" />
+        <activity android:name="com.example.bankofthebest.login.LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

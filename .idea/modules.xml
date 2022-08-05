@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/BankOfTheBest.iml" filepath="$PROJECT_DIR$/.idea/modules/BankOfTheBest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/BankOfTheBest.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/BankOfTheBest.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/BankOfTheBest.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/BankOfTheBest.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/BankOfTheBest.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/BankOfTheBest.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/BankOfTheBest.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/BankOfTheBest.app.unitTest.iml" />
+    </modules>
+  </component>
+</project>
