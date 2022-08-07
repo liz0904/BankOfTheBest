@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#3f5cff">
+    android:layout_height="match_parent">
 
     <ImageView
         android:id="@+id/loginIcon2"
@@ -131,8 +130,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:text="당신에게 꿈을 속삭여요"
-        android:textColor="#FFFFFF"
+        android:text="BoB 회원가입"
+        android:textColor="#575757"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/loginIcon2"
         app:layout_constraintEnd_toEndOf="parent"

@@ -13,4 +13,7 @@
     <color name="back_gray">#e9ecef</color>
     <color name="text_gray">#5E5E5E</color>
     <color name="text_gray_dark">#303030</color>
+    <color name="light_pink">#FAB4B4</color>
+    <color name="light_blue">#288CD2</color>
+    <color name="light_yellow">#FFF8B8</color>
 </resources>

@@ -78,6 +78,8 @@ class MainActivity : AppCompatActivity() {
         val person=realm.where<Person>().findFirst()
         if (person != null) {
             textView2.text= person.id
+            todoTitleTextView.text="급여통장"
+            todoSubtitleTextView.text=person.money.toString()
         }
 
         // portDB에 기본 데이터 저장

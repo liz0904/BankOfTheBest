@@ -3,7 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/liz09/AndroidStudioProjects/BankOfTheBest/app/src/main/res/drawable-v24/rectangle.xml" value="0.146" />
         <entry key="..\:/Users/liz09/AndroidStudioProjects/BankOfTheBest/app/src/main/res/drawable/roundedge.xml" value="0.107" />
+        <entry key="..\:/Users/liz09/AndroidStudioProjects/BankOfTheBest/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/liz09/AndroidStudioProjects/BankOfTheBest/app/src/main/res/layout/activity_splash.xml" value="0.1527777777777778" />
+        <entry key="..\:/Users/liz09/AndroidStudioProjects/BankOfTheBest/app/src/main/res/layout/login_join.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/liz09/AndroidStudioProjects/BankOfTheBest/app/src/main/res/layout/login_login.xml" value="0.17983789260385005" />
+        <entry key="..\:/Users/liz09/AndroidStudioProjects/BankOfTheBest/app/src/main/res/layout/toolbar.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/liz09/AndroidStudioProjects/whisperApp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2985" />
         <entry key="..\:/Users/liz09/AndroidStudioProjects/whisperApp/app/src/main/res/drawable-v24/post.xml" value="0.2985" />
         <entry key="..\:/Users/liz09/AndroidStudioProjects/whisperApp/app/src/main/res/drawable/edge.xml" value="0.2985" />

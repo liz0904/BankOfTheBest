@@ -4,6 +4,7 @@ import io.realm.RealmObject
 
 open class Person(var id:String="",
                   var pwd:String="",
-                  var email:String="")
+                  var email:String="",
+                  var money:Int=0)
     : RealmObject() {
 }
