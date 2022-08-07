@@ -7,7 +7,7 @@
         <item name="colorOnPrimary">@color/main_color</item>
         <item name="android:textColor">@color/black</item>
 
-        <item name="android:fontFamily">@font/paybooc_medium</item>
+        <item name="android:fontFamily">@font/kakao_regular</item>
 
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
