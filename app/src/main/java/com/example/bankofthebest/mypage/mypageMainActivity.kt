@@ -89,7 +89,7 @@ class mypageMainActivity : AppCompatActivity() {
             dialog.show()
         }
 
-        layout_quit?.setOnClickListener {//어플을 종료시킨다.
+        layout_quit?.setOnClickListener {//어플을 종료 및 로그아웃
             finishAffinity()
             System.runFinalization()
             System.exit(0)}

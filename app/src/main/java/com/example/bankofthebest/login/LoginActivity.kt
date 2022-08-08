@@ -77,6 +77,7 @@ class LoginActivity: AppCompatActivity(){
         if(person!=null){
             Toast.makeText(this,"로그인 성공", Toast.LENGTH_SHORT).show()
             var intent=Intent(this, MainActivity::class.java)
+            intent.putExtra("userid", person.id)
             startActivity(intent)
         }else{
             Toast.makeText(this,"로그인 정보가 없거나 틀립니다.", Toast.LENGTH_SHORT).show()

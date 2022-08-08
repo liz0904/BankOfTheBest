@@ -180,7 +180,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView42" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/text_account_out_money"
         android:layout_width="246dp"
         android:layout_height="48dp"
         android:layout_marginTop="16dp"
@@ -192,7 +192,7 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextPhone" />
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/btn_money_out"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="63dp"
@@ -202,6 +202,6 @@
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintTop_toBottomOf="@+id/text_account_out_money" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

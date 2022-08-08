@@ -106,18 +106,18 @@ class PortRegActivity : AppCompatActivity() {
     private fun updatePort(id: Long) {
         realm1.beginTransaction()    // 트랜젝션 시작
 
-        // editText에 있는 내용을 가져와
-        // 일치하는 id 필드의 데이터 수정
-        val updateItem = realm1.where<portDB>().equalTo("id", id).findFirst()!!
-        updateItem.title = edtTitle_port.text.toString()
-        updateItem.date = edtDate_port.text.toString()
-        updateItem.classification = edtClassification_port.text.toString()
-        updateItem.content = edtContent_port.text.toString()
-        updateItem.memo = edtMemo_port.text.toString()
+                // editText에 있는 내용을 가져와
+                // 일치하는 id 필드의 데이터 수정
+                val updateItem = realm1.where<portDB>().equalTo("id", id).findFirst()!!
+                updateItem.title = edtTitle_port.text.toString()
+                updateItem.date = edtDate_port.text.toString()
+                updateItem.classification = edtClassification_port.text.toString()
+                updateItem.content = edtContent_port.text.toString()
+                updateItem.memo = edtMemo_port.text.toString()
 
-        realm1.commitTransaction()  // 트랜젝션 종료
-        alert("변경되었습니다") {
-            yesButton { finish() }
+                realm1.commitTransaction()  // 트랜젝션 종료
+                alert("변경되었습니다") {
+                    yesButton { finish() }
         }.show()
     }
 

@@ -18,7 +18,6 @@
         <activity android:name="com.example.bankofthebest.portfolio.PortRegActivity" />
         <activity android:name="com.example.bankofthebest.portfolio.PortMainActivity" />
         <activity android:name="com.example.bankofthebest.event.EventItemActivity" />
-        <activity android:name="com.example.bankofthebest.event.AddPostActivity" />
         <activity android:name="com.example.bankofthebest.event.WebViewActivity" />
         <activity android:name="com.example.bankofthebest.event.EventListActivity" />
         <activity android:name="com.example.bankofthebest.MainActivity" />

@@ -11,16 +11,17 @@
     <include
         android:id="@+id/include"
         layout="@layout/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="55dp" />
+        android:layout_width="414dp"
+        android:layout_height="86dp"
+        tools:layout_editor_absoluteX="-3dp" />
 
     <LinearLayout
         android:id="@+id/linearLayout_port"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="8dp"
         android:orientation="vertical"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/include">
 
         <LinearLayout
             android:id="@+id/linearLayout1_port"

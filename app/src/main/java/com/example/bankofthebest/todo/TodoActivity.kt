@@ -24,6 +24,15 @@ class TodoActivity : AppCompatActivity() {
         lateinit var text_account_number:TextView
         lateinit var btn_account_out_in:Button
 
+    val loginRealm = try {
+        val config = RealmConfiguration.Builder()
+            .deleteRealmIfMigrationNeeded()
+            .build()
+        Realm.getInstance(config)
+    } catch (ex: RealmMigrationNeededException) {
+        Realm.getDefaultInstance()
+    }
+
         val realm = try {
             //Realm 인스턴스 얻기
             //오류에 대비하여 예외처리
@@ -50,16 +59,14 @@ class TodoActivity : AppCompatActivity() {
             text_account_list_name.text = person.id+"님의 급여통장"
             text_account_number.text=person.account
             text_account_list_money.text=person.money.toString()+"원"
-
         }
 
         //할 일 추가 버튼 클릭 리스너
         btn_account_out_in.setOnClickListener { view ->
             startActivity<ChoiceBankActivity>()
-            //startActivity<EditTodoActivity>()
         }
 
-        val realmResult = realm.where<Todo>().findAll().sort("date", Sort.ASCENDING)
+        val realmResult = realm.where<Todo>().equalTo("username", person!!.id).findAll().sort("date", Sort.ASCENDING)
         // 할 일 목록을 날짜순으로 모두 가져옴
 
         val adapter = TodoListAdapter(realmResult)  // 할 일 목록이 담긴 어댑터 생성

@@ -10,6 +10,12 @@
     android:layout_height="match_parent"
     android:background="#FFFFFF">
 
+    <include
+        android:id="@+id/include"
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="55dp" />
+
     <TextView
         android:id="@+id/titleSub"
         android:layout_width="372dp"
@@ -62,7 +68,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="71dp" />
+        tools:layout_editor_absoluteY="86dp" />
 
     <ImageButton
         android:id="@+id/webBtn"
@@ -73,7 +79,8 @@
         android:background="#FFFFFF"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view"
-        app:srcCompat="@drawable/homepage" />
+        app:srcCompat="@drawable/homepage"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/textView19"
@@ -95,7 +102,8 @@
         android:background="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view"
-        app:srcCompat="@drawable/share" />
+        app:srcCompat="@drawable/share"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <TextView
         android:id="@+id/textView20"

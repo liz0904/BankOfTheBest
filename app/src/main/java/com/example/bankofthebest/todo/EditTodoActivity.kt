@@ -7,6 +7,7 @@ import android.widget.CalendarView
 import android.widget.EditText
 import android.widget.TextView
 import com.example.bankofthebest.R
+import com.example.bankofthebest.login.Person
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import io.realm.Realm
 import io.realm.RealmConfiguration
@@ -25,6 +26,15 @@ class EditTodoActivity : AppCompatActivity() {
     lateinit var doneFab: FloatingActionButton
     lateinit var todoEditText: EditText
     lateinit var subEditText: EditText
+
+    val loginRealm = try {
+        val config = RealmConfiguration.Builder()
+            .deleteRealmIfMigrationNeeded()
+            .build()
+        Realm.getInstance(config)
+    } catch (ex: RealmMigrationNeededException) {
+        Realm.getDefaultInstance()
+    }
 
     val realm= try {
         //Realm 인스턴스 얻기
@@ -93,12 +103,14 @@ class EditTodoActivity : AppCompatActivity() {
     private fun insertTodo(){ //데이터베이스 삽입
         realm.beginTransaction()  //트랜잭션 시작
         val newItem=realm.createObject<Todo>(nextId())
+        val person = loginRealm.where<Person>().findFirst()
         newItem.title=todoEditText.text.toString()
         newItem.subtitle=subEditText.text.toString()
         newItem.date=calendar.timeInMillis
+        newItem.username=person!!.id
 
         realm.commitTransaction() //트랜잭션 종료
-        alert("이체가 완료 되었습니다."){
+        alert(person.id+"님 이체가 완료 되었습니다."){
             yesButton { finish() }
         }.show()
     }

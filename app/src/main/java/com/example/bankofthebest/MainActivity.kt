@@ -1,5 +1,6 @@
 package com.example.bankofthebest
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -13,12 +14,15 @@ import com.example.bankofthebest.portfolio.PortMainActivity
 import com.example.bankofthebest.portfolio.portDB
 import com.example.bankofthebest.todo.ChoiceBankActivity
 import com.example.bankofthebest.todo.Todo
+import com.example.bankofthebest.todo.TodoActivity
 import io.realm.Realm
 import io.realm.RealmConfiguration
 import io.realm.exceptions.RealmMigrationNeededException
 import io.realm.kotlin.createObject
 import io.realm.kotlin.where
+import org.jetbrains.anko.alert
 import org.jetbrains.anko.startActivity
+import org.jetbrains.anko.yesButton
 
 class MainActivity : AppCompatActivity() {
 
@@ -35,6 +39,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var layout_notice: View
     lateinit var layout_mypage: View
     lateinit var btn_goto_saving:Button
+    lateinit var layout_account:View
 
     // 현재 액티비티에서 Realm 인스턴스 얻음
     // Migration 오류 발생에 대비하여 try-catch로 얻어옴
@@ -57,6 +62,8 @@ class MainActivity : AppCompatActivity() {
         Realm.getDefaultInstance()
     }
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -74,10 +81,12 @@ class MainActivity : AppCompatActivity() {
         layout_notice=findViewById(R.id.layout_notice)
         layout_mypage=findViewById(R.id.layout_mypage)
         btn_goto_saving=findViewById(R.id.btn_goto_saving)
+        layout_account=findViewById(R.id.layout_account)
         realm.beginTransaction()    // 첫 번째 트랜젝션 시작
 
         // 현재 로그인한 회원 정보의 id 값을 가져와 메인 화면에 보여줌
-        val person = realm.where<Person>().findFirst()
+        val userid=intent.getStringExtra("userid")
+        val person = realm.where<Person>().equalTo("id", userid).findFirst()
         if (person != null) {
             text_user.text = person.id
             person.account="3333-08-1234567"
@@ -112,8 +121,8 @@ class MainActivity : AppCompatActivity() {
         if (minId2 == null) {
             val newItem10 = realm2.createObject<Todo>(nextId_todo())
             newItem10.date = 1641794919192
-            newItem10.title = "정보처리기사 자격증 취득"
-            newItem10.subtitle = "알고리즘 풀기\n백준 코딩테스트하기"
+            //newItem10.title = "계좌"
+            //newItem10.subtitle = "알고리즘 풀기\n백준 코딩테스트하기"
         }
         refreshTodo()   // 메인 페이지에 체크리스트 목록 중 날짜가 가장 빠른 데이터를 보여줌
 
@@ -132,7 +141,8 @@ class MainActivity : AppCompatActivity() {
             startActivity<ChoiceBankActivity>()
         }
         btn_goto_saving_minus.setOnClickListener {
-           //저금통을 해지하시겠습니까? 띄우고 예 하면 금액 변경
+            refreshsaving_minus()
+            //저금통을 해지하시겠습니까? 띄우고 예 하면 금액 변경
         }
         layout_commercial?.setOnClickListener{
             startActivity<EventListActivity>()
@@ -144,7 +154,10 @@ class MainActivity : AppCompatActivity() {
             startActivity<mypageMainActivity>()
         }
         btn_goto_saving.setOnClickListener {
-
+            refreshSaving_plus()
+        }
+        layout_account?.setOnClickListener {
+            startActivity<TodoActivity>()
         }
     }
 
@@ -180,5 +193,48 @@ class MainActivity : AppCompatActivity() {
             textview_money_saving.text=realmResult_main.saving_money.toString()+"원"
         }
     }
+    /*
+    여기정리필수
+    여기정리필수
+    여기정리필수
+    여기정리필수
+    여기정리필수
+    여기정리필수
+     */
 
+    //저금통 정리하기
+    private fun refreshSaving_plus() {
+        val realmResult_main = realm.where<Person>().equalTo("id", "asdf").findFirst()!!
+        realm.beginTransaction()
+
+        if (realmResult_main != null) {
+            todoDateTextView.text = realmResult_main.account
+            todoTitleTextView.text = "급여통장"
+            realmResult_main.saving_money+=realmResult_main.money%1000
+            realmResult_main.money-=realmResult_main.money%1000
+            todoSubtitleTextView.text =realmResult_main.money.toString()+"원"
+            textview_money_saving.text=realmResult_main.saving_money.toString()+"원"
+
+        }
+
+        realm.commitTransaction()
+    }
+
+    //저금통 해지하기
+    private fun refreshsaving_minus() {
+        val realmResult_main = realm.where<Person>().equalTo("id", "asdf").findFirst()!!
+        realm.beginTransaction()
+
+        if (realmResult_main != null) {
+            todoDateTextView.text = realmResult_main.account
+            todoTitleTextView.text = "급여통장"
+            realmResult_main.money+=realmResult_main.saving_money
+            realmResult_main.saving_money=0
+            todoSubtitleTextView.text =realmResult_main.money.toString()+"원"
+            textview_money_saving.text=realmResult_main.saving_money.toString()+"원"
+
+        }
+
+        realm.commitTransaction()
+    }
 }

@@ -140,7 +140,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:layout_marginBottom="32dp"
-            android:text="어플 종료"
+            android:text="로그아웃"
             android:textAlignment="center"
             android:textColor="@color/text_gray"
             android:textSize="16sp"

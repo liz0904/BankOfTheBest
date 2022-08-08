@@ -8,7 +8,7 @@
     tools:context=".MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout_account"
+        android:id="@+id/layout_account"
         android:layout_width="372dp"
         android:layout_height="213dp"
         android:layout_marginStart="16dp"
@@ -106,7 +106,7 @@
         android:background="@drawable/rectangle_blue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout_account">
+        app:layout_constraintTop_toBottomOf="@+id/layout_account">
 
         <Button
             android:id="@+id/btn_goto_saving_minus"
