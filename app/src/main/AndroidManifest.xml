@@ -21,14 +21,9 @@
         <activity android:name="com.example.bankofthebest.event.AddPostActivity" />
         <activity android:name="com.example.bankofthebest.event.WebViewActivity" />
         <activity android:name="com.example.bankofthebest.event.EventListActivity" />
-        <activity android:name="com.example.bankofthebest.community.MainCommuActivity" />
-        <activity android:name="com.example.bankofthebest.community.AddCommentActivity" />
-        <activity android:name="com.example.bankofthebest.community.ContentActivity" />
-        <activity android:name="com.example.bankofthebest.community.RegCommuActivity" />
         <activity android:name="com.example.bankofthebest.MainActivity" />
         <activity android:name="com.example.bankofthebest.todo.TodoActivity"/>
         <activity android:name="com.example.bankofthebest.login.JoinActivity" />
-        <activity android:name="com.example.bankofthebest.AwardsActivity" />
         <activity android:name=".SplashActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:exported="true">

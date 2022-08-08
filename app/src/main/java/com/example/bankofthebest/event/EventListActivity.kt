@@ -16,7 +16,6 @@ class EventListActivity : AppCompatActivity() {
     lateinit var volunteerBtn:Button
     lateinit var studyBtn:Button
     lateinit var otherBtn:Button
-    lateinit var addBtn:FloatingActionButton
 
     var contentList= arrayListOf<ContentClass>(
         ContentClass("2021 MZ 인공지능 해커톤 대회",
@@ -124,7 +123,7 @@ class EventListActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.event_item_floating)
+        setContentView(R.layout.event_listview)
 
         listView = findViewById(R.id.listview)
         contestBtn=findViewById(R.id.contestBtn)
@@ -133,7 +132,6 @@ class EventListActivity : AppCompatActivity() {
         allBtn=findViewById(R.id.allBtn)
         otherBtn=findViewById(R.id.otherBtn)
         eduBtn=findViewById(R.id.eduBtn)
-        addBtn=findViewById(R.id.addBtn)
 
         //AddPostActivity에서 넘어온 intent데이터를 contentList 배열에 추가
         if(intent.hasExtra("title")){
@@ -210,10 +208,6 @@ class EventListActivity : AppCompatActivity() {
                 tmp[i].bool = tmp[i].sort.equals("기타")
             }
         }
-        addBtn.setOnClickListener {
-            Toast.makeText(this, "스터디/동아리 추가하기", Toast.LENGTH_SHORT).show()
-            val intent= Intent(this, AddPostActivity::class.java)
-            startActivity(intent)
-        }
+
     }
 }

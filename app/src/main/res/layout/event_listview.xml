@@ -21,11 +21,12 @@
     <ListView
         android:id="@+id/listview"
         android:layout_width="match_parent"
-        android:layout_height="600dp"
+        android:layout_height="631dp"
+        android:layout_marginTop="24dp"
         android:background="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" >
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/otherBtn">
 
     </ListView>
 
@@ -49,14 +50,12 @@
         android:layout_width="110dp"
         android:layout_height="50dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginTop="24dp"
         android:text="봉사"
         android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold"
         app:backgroundTint="@color/sub_color"
-        app:layout_constraintBottom_toTopOf="@+id/listview"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/allBtn" />
 
@@ -65,15 +64,13 @@
         android:layout_width="145dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="24dp"
         android:text="스터디·동아리"
         android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold"
         app:backgroundTint="@color/sub_color"
-        app:layout_constraintBottom_toTopOf="@+id/listview"
         app:layout_constraintEnd_toStartOf="@+id/otherBtn"
         app:layout_constraintStart_toEndOf="@+id/volunteerBtn"
         app:layout_constraintTop_toBottomOf="@+id/contestBtn" />
@@ -96,15 +93,13 @@
         android:id="@+id/otherBtn"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="24dp"
         android:text="기타"
         android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold"
         app:backgroundTint="@color/sub_color"
-        app:layout_constraintBottom_toTopOf="@+id/listview"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/eduBtn" />
 
