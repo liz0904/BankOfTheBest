@@ -6,7 +6,6 @@ import android.view.View
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
-import com.example.bankofthebest.community.MainCommuActivity
 import com.example.bankofthebest.event.EventListActivity
 import com.example.bankofthebest.login.Person
 import com.example.bankofthebest.mypage.mypageMainActivity
