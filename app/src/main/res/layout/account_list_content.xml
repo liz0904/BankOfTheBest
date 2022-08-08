@@ -16,7 +16,7 @@
         tools:layout_editor_absoluteX="0dp">
 
         <TextView
-            android:id="@+id/todoTitleTextView_Saving"
+            android:id="@+id/text_account_list_name"
             android:layout_width="match_parent"
             android:layout_height="37dp"
             android:layout_marginTop="32dp"
@@ -29,7 +29,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/todoDateTextView"
+            android:id="@+id/text_account_number"
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:layout_marginTop="32dp"
@@ -39,10 +39,10 @@
             android:textAlignment="center"
             android:textColor="@color/text_gray"
             android:textSize="16sp"
-            app:layout_constraintTop_toBottomOf="@+id/todoTitleTextView_Saving" />
+            app:layout_constraintTop_toBottomOf="@+id/text_account_list_name" />
 
         <TextView
-            android:id="@+id/todoSubtitleTextView_Saving"
+            android:id="@+id/text_account_list_money"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginTop="8dp"
@@ -53,7 +53,7 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textSize="24sp"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@+id/todoDateTextView" />
+            app:layout_constraintTop_toBottomOf="@+id/text_account_number" />
 
         <Button
             android:id="@+id/btn_account_out_in"
@@ -67,7 +67,7 @@
             app:backgroundTint="#ECA9A9"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/todoSubtitleTextView_Saving" />
+            app:layout_constraintTop_toBottomOf="@+id/text_account_list_money" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

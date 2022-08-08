@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/liz09/AndroidStudioProjects/BankOfTheBest/app/src/main/res/drawable-v24/rectangle.xml" value="0.146" />
+        <entry key="..\:/Users/liz09/AndroidStudioProjects/BankOfTheBest/app/src/main/res/drawable-v24/rectangle_blue.xml" value="0.3325" />
         <entry key="..\:/Users/liz09/AndroidStudioProjects/BankOfTheBest/app/src/main/res/drawable-v24/rectangle_pink.xml" value="0.306" />
         <entry key="..\:/Users/liz09/AndroidStudioProjects/BankOfTheBest/app/src/main/res/drawable-v24/rectangle_yellow.xml" value="0.306" />
         <entry key="..\:/Users/liz09/AndroidStudioProjects/BankOfTheBest/app/src/main/res/drawable/edge.xml" value="0.306" />
@@ -11,12 +12,26 @@
         <entry key="..\:/Users/liz09/AndroidStudioProjects/BankOfTheBest/app/src/main/res/drawable/icon_title_background.xml" value="0.306" />
         <entry key="..\:/Users/liz09/AndroidStudioProjects/BankOfTheBest/app/src/main/res/drawable/roundedge.xml" value="0.107" />
         <entry key="..\:/Users/liz09/AndroidStudioProjects/BankOfTheBest/app/src/main/res/font/app_font.xml" value="0.3328125" />
+        <entry key="..\:/Users/liz09/AndroidStudioProjects/BankOfTheBest/app/src/main/res/layout/account_activity.xml" value="0.26145833333333335" />
+        <entry key="..\:/Users/liz09/AndroidStudioProjects/BankOfTheBest/app/src/main/res/layout/account_list_add.xml" value="0.25677083333333334" />
+        <entry key="..\:/Users/liz09/AndroidStudioProjects/BankOfTheBest/app/src/main/res/layout/account_list_content.xml" value="0.2115036231884058" />
+        <entry key="..\:/Users/liz09/AndroidStudioProjects/BankOfTheBest/app/src/main/res/layout/account_list_item.xml" value="0.25" />
+        <entry key="..\:/Users/liz09/AndroidStudioProjects/BankOfTheBest/app/src/main/res/layout/account_list_out.xml" value="0.1" />
         <entry key="..\:/Users/liz09/AndroidStudioProjects/BankOfTheBest/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/liz09/AndroidStudioProjects/BankOfTheBest/app/src/main/res/layout/activity_splash.xml" value="0.1527777777777778" />
+        <entry key="..\:/Users/liz09/AndroidStudioProjects/BankOfTheBest/app/src/main/res/layout/community_activity_main.xml" value="0.30055579307396324" />
+        <entry key="..\:/Users/liz09/AndroidStudioProjects/BankOfTheBest/app/src/main/res/layout/community_item_content.xml" value="0.30055579307396324" />
+        <entry key="..\:/Users/liz09/AndroidStudioProjects/BankOfTheBest/app/src/main/res/layout/community_list.xml" value="0.30055579307396324" />
         <entry key="..\:/Users/liz09/AndroidStudioProjects/BankOfTheBest/app/src/main/res/layout/event_add_floating.xml" value="0.3026041666666667" />
+        <entry key="..\:/Users/liz09/AndroidStudioProjects/BankOfTheBest/app/src/main/res/layout/event_addpost.xml" value="0.30055579307396324" />
+        <entry key="..\:/Users/liz09/AndroidStudioProjects/BankOfTheBest/app/src/main/res/layout/event_content.xml" value="0.30055579307396324" />
+        <entry key="..\:/Users/liz09/AndroidStudioProjects/BankOfTheBest/app/src/main/res/layout/event_item_floating.xml" value="0.30055579307396324" />
+        <entry key="..\:/Users/liz09/AndroidStudioProjects/BankOfTheBest/app/src/main/res/layout/event_listitem.xml" value="0.30055579307396324" />
+        <entry key="..\:/Users/liz09/AndroidStudioProjects/BankOfTheBest/app/src/main/res/layout/event_listview.xml" value="0.22" />
+        <entry key="..\:/Users/liz09/AndroidStudioProjects/BankOfTheBest/app/src/main/res/layout/event_webview.xml" value="0.30055579307396324" />
         <entry key="..\:/Users/liz09/AndroidStudioProjects/BankOfTheBest/app/src/main/res/layout/login_join.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/liz09/AndroidStudioProjects/BankOfTheBest/app/src/main/res/layout/login_login.xml" value="0.17983789260385005" />
-        <entry key="..\:/Users/liz09/AndroidStudioProjects/BankOfTheBest/app/src/main/res/layout/mypage_activity_main.xml" value="0.3026041666666667" />
+        <entry key="..\:/Users/liz09/AndroidStudioProjects/BankOfTheBest/app/src/main/res/layout/mypage_activity_main.xml" value="0.5" />
         <entry key="..\:/Users/liz09/AndroidStudioProjects/BankOfTheBest/app/src/main/res/layout/port_activity_main.xml" value="0.3026041666666667" />
         <entry key="..\:/Users/liz09/AndroidStudioProjects/BankOfTheBest/app/src/main/res/layout/port_content_main.xml" value="0.3026041666666667" />
         <entry key="..\:/Users/liz09/AndroidStudioProjects/BankOfTheBest/app/src/main/res/layout/port_list.xml" value="0.3026041666666667" />
