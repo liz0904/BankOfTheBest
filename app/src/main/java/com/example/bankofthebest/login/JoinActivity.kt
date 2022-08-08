@@ -13,7 +13,7 @@ import io.realm.Realm
 import io.realm.RealmConfiguration
 import io.realm.exceptions.RealmMigrationNeededException
 
-class JoinActivity : AppCompatActivity(){
+class  JoinActivity : AppCompatActivity(){
 
     lateinit var joinId: EditText
     lateinit var joinPwd: EditText

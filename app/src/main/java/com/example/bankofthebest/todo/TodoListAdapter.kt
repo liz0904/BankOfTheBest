@@ -17,7 +17,7 @@ class TodoListAdapter(realmResult: OrderedRealmCollection<Todo>)
 
         if(convertView==null){
             //xml 레이아웃 파일을 불러와서 뷰로 전환시킴
-            view= LayoutInflater.from(parent?.context).inflate(R.layout.todo_item,parent, false)
+            view= LayoutInflater.from(parent?.context).inflate(R.layout.account_list_item,parent, false)
             vh=ViewHolder(view)
             view.tag=vh
         }else{
@@ -44,7 +44,7 @@ class TodoListAdapter(realmResult: OrderedRealmCollection<Todo>)
     }
 }
 class ViewHolder(view: View) {
-    val dateTextView: TextView = view.findViewById(R.id.text1)
-    val textTextView: TextView = view.findViewById(R.id.text2)
-    val subTextView: TextView = view.findViewById(R.id.text3)
+    val dateTextView: TextView = view.findViewById(R.id.account_date)
+    val textTextView: TextView = view.findViewById(R.id.account_list_out_money)
+    val subTextView: TextView = view.findViewById(R.id.account_list_out_number)
 }

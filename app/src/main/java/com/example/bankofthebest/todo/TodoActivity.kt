@@ -1,11 +1,14 @@
 package com.example.bankofthebest.todo
 
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ListView
-import com.google.android.material.floatingactionbutton.FloatingActionButton
+import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.bankofthebest.R
 import com.example.bankofthebest.TodoListAdapter
+import com.example.bankofthebest.login.Person
 import io.realm.Realm
 import io.realm.RealmConfiguration
 import io.realm.Sort
@@ -15,29 +18,45 @@ import org.jetbrains.anko.startActivity
 
 class TodoActivity : AppCompatActivity() {
 
-    lateinit var fab:FloatingActionButton
-    lateinit var listView: ListView
-    val realm = try {
-        //Realm 인스턴스 얻기
-        //오류에 대비하여 예외처리
-        val config = RealmConfiguration.Builder()
-            .deleteRealmIfMigrationNeeded()
-            .build()
-        Realm.getInstance(config)
-    } catch (ex: RealmMigrationNeededException) {
+        lateinit var listView: ListView
+        lateinit var text_account_list_name:TextView
+        lateinit var text_account_list_money:TextView
+        lateinit var text_account_number:TextView
+        lateinit var btn_account_out_in:Button
+
+        val realm = try {
+            //Realm 인스턴스 얻기
+            //오류에 대비하여 예외처리
+            val config = RealmConfiguration.Builder()
+                .deleteRealmIfMigrationNeeded()
+                .build()
+            Realm.getInstance(config)
+        } catch (ex: RealmMigrationNeededException) {
         Realm.getDefaultInstance()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.todo_activity)
+        setContentView(R.layout.account_activity)
 
         listView=findViewById(R.id.listView)
-        fab=findViewById(R.id.fab)
+        text_account_list_name=findViewById(R.id.text_account_list_name)
+        text_account_number=findViewById(R.id.text_account_number)
+        text_account_list_money=findViewById(R.id.text_account_list_money)
+        btn_account_out_in=findViewById(R.id.btn_account_out_in)
+
+        val person = realm.where<Person>().findFirst()
+        if (person != null) {
+            text_account_list_name.text = person.id+"님의 급여통장"
+            text_account_number.text=person.account
+            text_account_list_money.text=person.money.toString()+"원"
+
+        }
 
         //할 일 추가 버튼 클릭 리스너
-        fab.setOnClickListener { view ->
-            startActivity<EditTodoActivity>()
+        btn_account_out_in.setOnClickListener { view ->
+            startActivity<ChoiceBankActivity>()
+            //startActivity<EditTodoActivity>()
         }
 
         val realmResult = realm.where<Todo>().findAll().sort("date", Sort.ASCENDING)

@@ -41,7 +41,7 @@ class EditTodoActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.todo_activity_edit)
+        setContentView(R.layout.account_list_add)
 
         calendarView = findViewById(R.id.calendarView)
         todoEditText = findViewById(R.id.todoEditText)
@@ -80,8 +80,7 @@ class EditTodoActivity : AppCompatActivity() {
         subEditText.setText(todo.subtitle)
         calendarView.date=todo.date
 
-        //완료 버튼 클릭시 updateTodo() 호출
-        doneFab.setOnClickListener { updateTodo(id)}
+
         //삭제 버튼 클릭시 deleteTodo() 호출
         deleteFab.setOnClickListener { deleteTodo(id) }
     }
@@ -90,6 +89,7 @@ class EditTodoActivity : AppCompatActivity() {
         super.onDestroy()
         realm.close() //Realm 인스턴스 해제
     }
+
     private fun insertTodo(){ //데이터베이스 삽입
         realm.beginTransaction()  //트랜잭션 시작
         val newItem=realm.createObject<Todo>(nextId())
@@ -98,30 +98,12 @@ class EditTodoActivity : AppCompatActivity() {
         newItem.date=calendar.timeInMillis
 
         realm.commitTransaction() //트랜잭션 종료
-        alert("일정이 저장 되었습니다."){
+        alert("이체가 완료 되었습니다."){
             yesButton { finish() }
         }.show()
     }
-    // 데이터 베이스 할 일 변경
-    private fun updateTodo(id: Long) {
-        realm.beginTransaction()
 
-        val updateItem = realm.where<Todo>().equalTo("id", id).findFirst()!!
-        // where<Todo>() : 테이블의 모든 값을 얻어옴
-        // .equalTo(필드명, Long) : 해당 '필드명'의 Long형 id값의 데이터를 가져옴
-        // findFirst() : 첫 번째 데이터
 
-        updateItem.title = todoEditText.text.toString()
-        updateItem.subtitle = subEditText.text.toString()
-        updateItem.date = calendar.timeInMillis
-        // timeInMillis 프로퍼티 : 날짜를 가져오는 getTimeInMilles()
-
-        realm.commitTransaction()
-
-        alert("일정이 변경 되었습니다") {
-            yesButton { finish() }
-        }.show()
-    }
 
     // 데이터 베이스 할 일 삭제
     private fun deleteTodo(id: Long) {

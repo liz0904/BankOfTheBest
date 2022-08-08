@@ -5,6 +5,7 @@ import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
+import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -21,8 +22,9 @@ class mypageMainActivity : AppCompatActivity() {
     lateinit var id_my: TextView
     lateinit var email_my: TextView
 
-    lateinit var my_appout: Button
     lateinit var app_finish: Button
+    lateinit var layout_out: View
+    lateinit var layout_quit: View
 
     val loginRealm = try {
         //Realm 인스턴스 얻기
@@ -44,8 +46,8 @@ class mypageMainActivity : AppCompatActivity() {
         id_my=findViewById(R.id.id_my)
         email_my=findViewById(R.id.email_my)
 
-        my_appout=findViewById(R.id.my_appout)
-        app_finish=findViewById(R.id.app_finish)
+        layout_out=findViewById(R.id.layout_out)
+        layout_quit=findViewById(R.id.layout_quit)
 
         handler = Handler()
 
@@ -58,7 +60,7 @@ class mypageMainActivity : AppCompatActivity() {
         }
 
         //버튼 클릭시 alert Dialog 발생
-        my_appout.setOnClickListener {
+        layout_out.setOnClickListener {
             var dialog = AlertDialog.Builder(this)
             dialog.setTitle(" 회원 탈퇴하시겠습니까? ")
             dialog.setMessage("확인 버튼을 누르실 경우, 회원님의 소중한\n개인정보가 모두 삭제됩니다.")
@@ -87,10 +89,11 @@ class mypageMainActivity : AppCompatActivity() {
             dialog.show()
         }
 
-        app_finish.setOnClickListener {//어플을 종료시킨다.
+        layout_quit?.setOnClickListener {//어플을 종료시킨다.
             finishAffinity()
             System.runFinalization()
             System.exit(0)}
+
     }
 
 
