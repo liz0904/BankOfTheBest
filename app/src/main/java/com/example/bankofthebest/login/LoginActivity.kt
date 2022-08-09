@@ -10,6 +10,7 @@ import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import com.example.bankofthebest.MainActivity
 import com.example.bankofthebest.R
+import com.example.bankofthebest.portfolio.PortMainActivity
 import io.realm.Realm
 import io.realm.RealmConfiguration
 import io.realm.exceptions.RealmMigrationNeededException

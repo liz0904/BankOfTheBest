@@ -10,12 +10,6 @@
     android:layout_height="match_parent"
     android:background="#FFFFFF">
 
-    <include
-        android:id="@+id/include"
-        layout="@layout/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="55dp" />
-
     <TextView
         android:id="@+id/titleSub"
         android:layout_width="372dp"

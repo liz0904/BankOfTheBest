@@ -6,12 +6,26 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.bankofthebest.R
+import com.example.bankofthebest.login.Person
+import io.realm.Realm
+import io.realm.RealmConfiguration
+import io.realm.exceptions.RealmMigrationNeededException
+import io.realm.kotlin.where
 import org.jetbrains.anko.startActivity
 
 class ChoiceBankActivity : AppCompatActivity() {
 
     lateinit var btn_money_out: Button
     lateinit var text_account_out_money:TextView
+
+    val realm = try {
+        val config = RealmConfiguration.Builder()
+            .deleteRealmIfMigrationNeeded()
+            .build()
+        Realm.getInstance(config)
+    } catch (ex: RealmMigrationNeededException) {
+        Realm.getDefaultInstance()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,10 +35,12 @@ class ChoiceBankActivity : AppCompatActivity() {
         text_account_out_money=findViewById(R.id.text_account_out_money)
 
         btn_money_out.setOnClickListener {
-            intent= Intent(this, EditTodoActivity::class.java)
-            intent.putExtra("account_out_moeny", text_account_out_money.text.toString())
-            startActivity(intent)
-            //startActivity<TodoActivity>()
+            val userid=intent.getStringExtra("userid")
+            val person = realm.where<Person>().equalTo("id", userid).findFirst()
+
+            var intent_todo=Intent(this, EditTodoActivity::class.java)
+            intent_todo.putExtra("userid", person!!.id)
+            startActivity(intent_todo)
         }
     }
 }

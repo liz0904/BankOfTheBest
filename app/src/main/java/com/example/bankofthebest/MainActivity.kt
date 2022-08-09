@@ -124,24 +124,28 @@ class MainActivity : AppCompatActivity() {
             //newItem10.title = "계좌"
             //newItem10.subtitle = "알고리즘 풀기\n백준 코딩테스트하기"
         }
-        refreshTodo()   // 메인 페이지에 체크리스트 목록 중 날짜가 가장 빠른 데이터를 보여줌
+        refreshTodo(person!!.id)   // 메인 페이지에 체크리스트 목록 중 날짜가 가장 빠른 데이터를 보여줌
 
         // 새로고침 버튼을 누르면 메인 페이지에 체크리스트 목록 중 날짜가 가장 빠른 데이터를 보여주는 함수 실행
         btn_refresh.setOnClickListener {
-            refreshTodo()
+            refreshTodo(person!!.id)
         }
         realm2.commitTransaction()   // 두 번째 트랜젝션 종료
 
         // 이미지 버튼 클릭 시 해당하는 액티비티로 연결
 
         text_user.setOnClickListener {
-            startActivity<mypageMainActivity>()
+            var intent_my=Intent(this, mypageMainActivity::class.java)
+            intent_my.putExtra("userid", person.id)
+            startActivity(intent_my)
         }
         btn_goto_minus.setOnClickListener { view -> //메인페이지에서 이체하기 버튼 클릭
-            startActivity<ChoiceBankActivity>()
+            var intent_minus=Intent(this, ChoiceBankActivity::class.java)
+            intent_minus.putExtra("userid", person.id)
+            startActivity(intent_minus)
         }
         btn_goto_saving_minus.setOnClickListener {
-            refreshsaving_minus()
+            refreshsaving_minus(person!!.id)
             //저금통을 해지하시겠습니까? 띄우고 예 하면 금액 변경
         }
         layout_commercial?.setOnClickListener{
@@ -151,13 +155,17 @@ class MainActivity : AppCompatActivity() {
             startActivity<PortMainActivity>()
         }
         layout_mypage?.setOnClickListener {
-            startActivity<mypageMainActivity>()
+            var intent_my=Intent(this, mypageMainActivity::class.java)
+            intent_my.putExtra("userid", person.id)
+            startActivity(intent_my)
         }
         btn_goto_saving.setOnClickListener {
-            refreshSaving_plus()
+            refreshSaving_plus(person!!.id)
         }
-        layout_account?.setOnClickListener {
-            startActivity<TodoActivity>()
+        layout_account?.setOnClickListener {    //이체 내역 확인 페이지
+            var intent_my=Intent(this, TodoActivity::class.java)
+            intent_my.putExtra("userid", person.id)
+            startActivity(intent_my)
         }
     }
 
@@ -182,8 +190,8 @@ class MainActivity : AppCompatActivity() {
 
     // 메인 페이지에 체크리스트 목록 중
     // 날짜가 가장 빠른 데이터를 보여주는 함수
-    private fun refreshTodo() {
-        val realmResult_main = realm.where<Person>().findFirst()
+    private fun refreshTodo(userid:String) {
+        val realmResult_main = realm.where<Person>().equalTo("id", userid).findFirst()
         val realmResultmain1 = realmResult_main
 
         if (realmResultmain1 != null) {
@@ -193,18 +201,10 @@ class MainActivity : AppCompatActivity() {
             textview_money_saving.text=realmResult_main.saving_money.toString()+"원"
         }
     }
-    /*
-    여기정리필수
-    여기정리필수
-    여기정리필수
-    여기정리필수
-    여기정리필수
-    여기정리필수
-     */
 
     //저금통 정리하기
-    private fun refreshSaving_plus() {
-        val realmResult_main = realm.where<Person>().equalTo("id", "asdf").findFirst()!!
+    private fun refreshSaving_plus(userid:String) {
+        val realmResult_main = realm.where<Person>().equalTo("id", userid).findFirst()!!
         realm.beginTransaction()
 
         if (realmResult_main != null) {
@@ -221,8 +221,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     //저금통 해지하기
-    private fun refreshsaving_minus() {
-        val realmResult_main = realm.where<Person>().equalTo("id", "asdf").findFirst()!!
+    private fun refreshsaving_minus(userid:String) {
+        val realmResult_main = realm.where<Person>().equalTo("id", userid).findFirst()!!
         realm.beginTransaction()
 
         if (realmResult_main != null) {

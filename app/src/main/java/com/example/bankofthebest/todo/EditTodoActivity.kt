@@ -77,8 +77,12 @@ class EditTodoActivity : AppCompatActivity() {
             datePickText.text = String.format("%d / %d / %d", year, month + 1, dayOfMonth)
         }
     }
+
+
     //추가모드
     private fun insertMode(){
+
+
         deleteFab.visibility= View.GONE
         doneFab.setOnClickListener { insertTodo() }
     }
@@ -103,7 +107,10 @@ class EditTodoActivity : AppCompatActivity() {
     private fun insertTodo(){ //데이터베이스 삽입
         realm.beginTransaction()  //트랜잭션 시작
         val newItem=realm.createObject<Todo>(nextId())
-        val person = loginRealm.where<Person>().findFirst()
+
+        var userid=intent.getStringExtra("userid")
+        val person = loginRealm.where<Person>().equalTo("id", userid).findFirst()
+
         newItem.title=todoEditText.text.toString()
         newItem.subtitle=subEditText.text.toString()
         newItem.date=calendar.timeInMillis

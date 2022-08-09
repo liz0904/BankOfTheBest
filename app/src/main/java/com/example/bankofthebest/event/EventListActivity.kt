@@ -18,7 +18,7 @@ class EventListActivity : AppCompatActivity() {
     lateinit var otherBtn:Button
 
     var contentList= arrayListOf<ContentClass>(
-        ContentClass("2021 MZ 인공지능 해커톤 대회",
+        ContentClass("2022 Bank of the Best 금융권 우수상 수상",
             "대상: 일반인, 대학생\n" +
                     "주최: 한국지능정보사회 진흥원\n" +
                     "모집 기간: 2021.01.11~2021.01.24",
@@ -31,7 +31,7 @@ class EventListActivity : AppCompatActivity() {
             "mz_hackathon",
             "https://mzhackathonmedical.co.kr/mzmedical/"),
 
-        ContentClass("2021년 굿네이버스 대구경북본부 대학생자원봉사동아리 한빛 모집",
+        ContentClass("8월 환율 정보 리스트",
             "대상: 대학생\n" +
                     "주최: 굿네이버스 대구경북본부\n" +
                     "모집 기간: 20201.02.05~2021.02.24",
@@ -48,7 +48,7 @@ class EventListActivity : AppCompatActivity() {
             "goodvolun",
             "http://daegukb.goodneighbors.kr/gndaegukb/b"),
 
-        ContentClass("ICT콤플렉스 앱개발 챌린지",
+        ContentClass("2022 상반기 청년저축 적금계좌 개설 안내",
             "대상: ICT콤플렉스 멤버\n" +
                     "주최: 과학기술정보통신부\n" +
                     "모집 기간: 2020.11.26~2020.12.09",
@@ -62,7 +62,7 @@ class EventListActivity : AppCompatActivity() {
             "ictchallenge",
             "http://www.ictcoc.kr/03_pro_n/pro01_view.asp?idx=73"),
 
-        ContentClass("2021 서울여대 SW 에듀 서포터즈 모집",
+        ContentClass("2022년 8월 투자 정보 리스트",
             "대상: 서울여대 소중대 학생\n" +
                     "주최: 서울여자대학교 sw중심사업단\n" +
                     "모집 기간: 2020/02/02~2020/02/02",
@@ -72,7 +72,7 @@ class EventListActivity : AppCompatActivity() {
             "",
             ""),
 
-        ContentClass("2021 SW 마에스트로 12기 연수생 모집",
+        ContentClass("금융 창의성 아이디어 해커톤 개최",
             "대상: SW개발 분야에 열정,재능을 보유한 자\n" +
                     "주최: 정보통신기획평가원 \n" +
                     "모집 기간: 2021. 1.18.10:00 ~ 2.18.17:00",
@@ -84,7 +84,7 @@ class EventListActivity : AppCompatActivity() {
             "soma",
             "http://www.swmaestro.org"),
 
-        ContentClass("k-shield 보안사고 분석대응 과정",
+        ContentClass("BoB 보안 컨설팅 트랙 과정 지원금 안내",
             "대상: 고등,대학 최종학력 재학생 및 미취업 졸업자\n" +
                     "주최: 한국정보보호교육센터\n" +
                     "모집 기간: 2021.01.18~2021.02.15",

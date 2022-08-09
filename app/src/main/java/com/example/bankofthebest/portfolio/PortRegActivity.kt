@@ -3,6 +3,7 @@ package com.example.bankofthebest.portfolio
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.bankofthebest.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -17,11 +18,11 @@ import org.jetbrains.anko.yesButton
 class PortRegActivity : AppCompatActivity() {
 
     // 변수 선언
-    lateinit var edtTitle_port: EditText
-    lateinit var edtDate_port: EditText
-    lateinit var edtClassification_port : EditText
-    lateinit var edtContent_port: EditText
-    lateinit var edtMemo_port: EditText
+    lateinit var edtTitle_port: TextView
+    lateinit var edtDate_port: TextView
+    lateinit var edtClassification_port : TextView
+    lateinit var edtContent_port: TextView
+    lateinit var edtMemo_port: TextView
     lateinit var deleteFab_port: FloatingActionButton
     lateinit var doneFab_port: FloatingActionButton
 
@@ -52,16 +53,10 @@ class PortRegActivity : AppCompatActivity() {
         // 입력/수정/삭제 모드 변경
         val id = intent.getLongExtra("id", -1L)
         if (id == -1L) {
-            insertMode_port()
+            //insertMode_port()
         } else {
             updateMode_port(id)
         }
-    }
-
-    // 수정 상태에서만 삭제 버튼이 보이도록 함
-    private fun insertMode_port() {
-        deleteFab_port.visibility = View.GONE
-        doneFab_port.setOnClickListener { insertPort() }
     }
 
     // 수정
@@ -74,8 +69,8 @@ class PortRegActivity : AppCompatActivity() {
         edtContent_port.setText(listdb.content)
         edtMemo_port.setText(listdb.memo)
 
-        doneFab_port.setOnClickListener { updatePort(id) }
-        deleteFab_port.setOnClickListener { deletePort(id) }
+        //doneFab_port.setOnClickListener { updatePort(id) }
+        //deleteFab_port.setOnClickListener { deletePort(id) }
     }
 
     // 액티비티 생명 주기에 맞춰 얻어온 Realm 인스턴스 반환

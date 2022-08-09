@@ -52,7 +52,8 @@ class mypageMainActivity : AppCompatActivity() {
         handler = Handler()
 
         //Realm 데이터베이스 가져오기
-        val person=loginRealm.where<Person>().findFirst()
+        var userid=intent.getStringExtra("userid")
+        val person=loginRealm.where<Person>().equalTo("id", userid.toString()).findFirst()
 
         if (person != null) {
             id_my.text= person.id

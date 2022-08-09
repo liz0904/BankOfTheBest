@@ -1,5 +1,6 @@
 package com.example.bankofthebest.todo
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ListView
@@ -9,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.bankofthebest.R
 import com.example.bankofthebest.TodoListAdapter
 import com.example.bankofthebest.login.Person
+import com.example.bankofthebest.mypage.mypageMainActivity
 import io.realm.Realm
 import io.realm.RealmConfiguration
 import io.realm.Sort
@@ -54,7 +56,8 @@ class TodoActivity : AppCompatActivity() {
         text_account_list_money=findViewById(R.id.text_account_list_money)
         btn_account_out_in=findViewById(R.id.btn_account_out_in)
 
-        val person = realm.where<Person>().findFirst()
+        val userid=intent.getStringExtra("userid")
+        val person = realm.where<Person>().equalTo("id", userid).findFirst()
         if (person != null) {
             text_account_list_name.text = person.id+"님의 급여통장"
             text_account_number.text=person.account
@@ -63,7 +66,9 @@ class TodoActivity : AppCompatActivity() {
 
         //할 일 추가 버튼 클릭 리스너
         btn_account_out_in.setOnClickListener { view ->
-            startActivity<ChoiceBankActivity>()
+            var intent_choice=Intent(this, ChoiceBankActivity::class.java)
+            intent_choice.putExtra("userid", person!!.id)
+            startActivity(intent_choice)
         }
 
         val realmResult = realm.where<Todo>().equalTo("username", person!!.id).findAll().sort("date", Sort.ASCENDING)
@@ -81,7 +86,6 @@ class TodoActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
-
         realm.close()
     }
 }

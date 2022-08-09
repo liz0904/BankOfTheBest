@@ -5,6 +5,7 @@ import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.bankofthebest.PortAdapter
 import com.example.bankofthebest.R
+import com.example.bankofthebest.login.Person
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import io.realm.Realm
 import io.realm.RealmConfiguration
@@ -14,12 +15,20 @@ import io.realm.kotlin.where
 import org.jetbrains.anko.startActivity
 
 class PortMainActivity : AppCompatActivity() {
-
     // 변수 선언
     lateinit var listView_port: ListView
 
     // 현재 액티비티에서 Realm 인스턴스 얻음
     // Migration 오류 발생에 대비하여 try-catch로 얻어옴
+
+    val loginRealm = try {
+        val config = RealmConfiguration.Builder()
+            .deleteRealmIfMigrationNeeded()
+            .build()
+        Realm.getInstance(config)
+    } catch (ex: RealmMigrationNeededException) {
+        Realm.getDefaultInstance()
+    }
                 val realm1 = try {
                     val config = RealmConfiguration.Builder()
                         .deleteRealmIfMigrationNeeded()
@@ -37,6 +46,7 @@ class PortMainActivity : AppCompatActivity() {
                     listView_port = findViewById(R.id.listView_port)
 
                     //portDB에 있는 데이터들을 id 필드로 정렬
+
                     val realmResult = realm1.where<portDB>().findAll().sort("id", Sort.ASCENDING)
 
                     //리스트뷰에 커스텀 어댑터 연결
