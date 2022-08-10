@@ -10,7 +10,6 @@ import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import com.example.bankofthebest.MainActivity
 import com.example.bankofthebest.R
-import com.example.bankofthebest.portfolio.PortMainActivity
 import io.realm.Realm
 import io.realm.RealmConfiguration
 import io.realm.exceptions.RealmMigrationNeededException
@@ -47,8 +46,8 @@ class LoginActivity: AppCompatActivity(){
         handler = Handler()
 
         id=findViewById(R.id.id)
-        pwd=findViewById(R.id.pwd)
-        loginBtn=findViewById(R.id.loginBtn)
+        pwd=findViewById(R.id.pwd_check)
+        loginBtn=findViewById(R.id.btn_check_pwd)
         joinBtn=findViewById(R.id.joinBtn)
 
         loginBtn.setOnClickListener {

@@ -3,12 +3,9 @@ package com.example.bankofthebest.todo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.CalendarView
-import android.widget.EditText
-import android.widget.TextView
+import android.widget.*
 import com.example.bankofthebest.R
 import com.example.bankofthebest.login.Person
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 import io.realm.Realm
 import io.realm.RealmConfiguration
 import io.realm.exceptions.RealmMigrationNeededException
@@ -20,12 +17,12 @@ import java.util.*
 
 class EditTodoActivity : AppCompatActivity() {
 
-    lateinit var datePickText: TextView
     lateinit var calendarView: CalendarView
-    lateinit var deleteFab: FloatingActionButton
-    lateinit var doneFab: FloatingActionButton
+    lateinit var deleteFab: Button
+    lateinit var doneFab: Button
     lateinit var todoEditText: EditText
     lateinit var subEditText: EditText
+    lateinit var input_bank:EditText
 
     val loginRealm = try {
         val config = RealmConfiguration.Builder()
@@ -54,11 +51,11 @@ class EditTodoActivity : AppCompatActivity() {
         setContentView(R.layout.account_list_add)
 
         calendarView = findViewById(R.id.calendarView)
-        todoEditText = findViewById(R.id.todoEditText)
-        subEditText = findViewById(R.id.subEditText)
-        datePickText = findViewById(R.id.datePickText)
+        todoEditText = findViewById(R.id.input_num)
+        subEditText = findViewById(R.id.input_money)
         deleteFab = findViewById(R.id.deleteFab)
         doneFab = findViewById(R.id.doneFab)
+        input_bank=findViewById(R.id.input_bank)
 
         // 인텐트로 id를 전달해서 데이터 베이스의 삽입/변경/삭제를 분기
         // id=-1 (추가모드)
@@ -69,6 +66,7 @@ class EditTodoActivity : AppCompatActivity() {
             updateMode(id)
         }
 
+        /*
         // 캘린더 뷰의 날짜를 선택했을 때 캘린더 객체에 설정
         calendarView.setOnDateChangeListener { view, year, month, dayOfMonth ->
             calendar.set(java.util.Calendar.YEAR, year)
@@ -76,13 +74,12 @@ class EditTodoActivity : AppCompatActivity() {
             calendar.set(java.util.Calendar.DAY_OF_MONTH, dayOfMonth)
             datePickText.text = String.format("%d / %d / %d", year, month + 1, dayOfMonth)
         }
+         */
     }
 
 
     //추가모드
     private fun insertMode(){
-
-
         deleteFab.visibility= View.GONE
         doneFab.setOnClickListener { insertTodo() }
     }
@@ -90,13 +87,14 @@ class EditTodoActivity : AppCompatActivity() {
     private fun updateMode(id:Long){
         //id에 해당하는 객체를 화면에 표시
         val todo=realm.where<Todo>().equalTo("id",id).findFirst()!!
-        todoEditText.setText(todo.title)
-        subEditText.setText(todo.subtitle)
-        calendarView.date=todo.date
-
+        todoEditText.setText(todo.account_list_out_number)
+        subEditText.setText(todo.account_list_out_money)
+        calendarView.date=todo.date //오늘 날짜
+        input_bank.setText(todo.account_list_bank)
 
         //삭제 버튼 클릭시 deleteTodo() 호출
         deleteFab.setOnClickListener { deleteTodo(id) }
+        doneFab.visibility=View.GONE    //열람시에는 수정 불가
     }
 
     override fun onDestroy() {
@@ -111,15 +109,24 @@ class EditTodoActivity : AppCompatActivity() {
         var userid=intent.getStringExtra("userid")
         val person = loginRealm.where<Person>().equalTo("id", userid).findFirst()
 
-        newItem.title=todoEditText.text.toString()
-        newItem.subtitle=subEditText.text.toString()
-        newItem.date=calendar.timeInMillis
-        newItem.username=person!!.id
+        if(person!!.money>=subEditText.text.toString().toInt()) {
+            person!!.money -= subEditText.text.toString().toInt()
+            newItem.account_list_out_number = todoEditText.text.toString()
+            newItem.account_list_out_money = subEditText.text.toString()
+            newItem.date = calendar.timeInMillis
+            newItem.username = person!!.id
+            newItem.usermoney = person!!.money
+            newItem.account_list_bank=input_bank.text.toString()
 
+            alert(person.id + "님 이체가 완료 되었습니다.") {
+                yesButton { finish() }
+            }.show()
+        }else{
+            alert("계좌 이체 실패: 잔액이 부족합니다") {
+                yesButton { finish() }
+            }.show()
+        }
         realm.commitTransaction() //트랜잭션 종료
-        alert(person.id+"님 이체가 완료 되었습니다."){
-            yesButton { finish() }
-        }.show()
     }
 
 
@@ -133,7 +140,7 @@ class EditTodoActivity : AppCompatActivity() {
 
         realm.commitTransaction()
 
-        alert("일정이 삭제 되었습니다") {
+        alert("이체 내역이 삭제되었습니다.") {
             yesButton { finish() }
         }.show()
     }
@@ -149,4 +156,6 @@ class EditTodoActivity : AppCompatActivity() {
         }
         return 0
     }
+
+
 }

@@ -1,5 +1,7 @@
 package com.example.bankofthebest
 
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -12,7 +14,7 @@ import com.example.bankofthebest.login.Person
 import com.example.bankofthebest.mypage.mypageMainActivity
 import com.example.bankofthebest.portfolio.PortMainActivity
 import com.example.bankofthebest.portfolio.portDB
-import com.example.bankofthebest.todo.ChoiceBankActivity
+import com.example.bankofthebest.todo.EditTodoActivity
 import com.example.bankofthebest.todo.Todo
 import com.example.bankofthebest.todo.TodoActivity
 import io.realm.Realm
@@ -20,9 +22,7 @@ import io.realm.RealmConfiguration
 import io.realm.exceptions.RealmMigrationNeededException
 import io.realm.kotlin.createObject
 import io.realm.kotlin.where
-import org.jetbrains.anko.alert
 import org.jetbrains.anko.startActivity
-import org.jetbrains.anko.yesButton
 
 class MainActivity : AppCompatActivity() {
 
@@ -140,13 +140,33 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent_my)
         }
         btn_goto_minus.setOnClickListener { view -> //메인페이지에서 이체하기 버튼 클릭
-            var intent_minus=Intent(this, ChoiceBankActivity::class.java)
+            var intent_minus=Intent(this, EditTodoActivity::class.java)
             intent_minus.putExtra("userid", person.id)
             startActivity(intent_minus)
         }
         btn_goto_saving_minus.setOnClickListener {
-            refreshsaving_minus(person!!.id)
             //저금통을 해지하시겠습니까? 띄우고 예 하면 금액 변경
+            var dialog = AlertDialog.Builder(this)
+            dialog.setTitle(" 저금통을 해지하시겠습니까? ")
+            dialog.setMessage("확인 버튼을 누르실 경우,\n저금통의 잔액이 기본 설정 계좌로 입금됩니다.")
+            dialog.setIcon(R.mipmap.icon_launcher)
+
+            fun toast_p() {
+                refreshsaving_minus(person!!.id)
+            }
+
+            var dialog_listener = object: DialogInterface.OnClickListener{
+                override fun onClick(dialog: DialogInterface?, which: Int) {
+                    when(which){ //확인시 삭제
+                        DialogInterface.BUTTON_POSITIVE ->
+                            toast_p()
+                    }
+                }
+            }
+
+            dialog.setPositiveButton("확인",dialog_listener)
+            dialog.setNegativeButton("취소",dialog_listener)
+            dialog.show()
         }
         layout_commercial?.setOnClickListener{
             startActivity<EventListActivity>()
@@ -160,7 +180,29 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent_my)
         }
         btn_goto_saving.setOnClickListener {
-            refreshSaving_plus(person!!.id)
+            //저금통으로 정리 오케이? 띄우고 예 하면 금액 변경
+            var dialog = AlertDialog.Builder(this)
+            dialog.setTitle(" 저금통을 해지하시겠습니까? ")
+            dialog.setMessage("확인 버튼을 누르실 경우,\n1000원 이하의 금액이 저금통으로 이체됩니다.")
+            dialog.setIcon(R.mipmap.icon_launcher)
+
+            fun toast_p() {
+                refreshSaving_plus(person!!.id)
+            }
+
+
+            var dialog_listener = object: DialogInterface.OnClickListener{
+                override fun onClick(dialog: DialogInterface?, which: Int) {
+                    when(which){ //확인시 삭제
+                        DialogInterface.BUTTON_POSITIVE ->
+                            toast_p()
+                    }
+                }
+            }
+
+            dialog.setPositiveButton("확인",dialog_listener)
+            dialog.setNegativeButton("취소",dialog_listener)
+            dialog.show()
         }
         layout_account?.setOnClickListener {    //이체 내역 확인 페이지
             var intent_my=Intent(this, TodoActivity::class.java)

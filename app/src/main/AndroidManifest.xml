@@ -38,7 +38,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.bankofthebest.todo.ChoiceBankActivity" />
+        <activity android:name="com.example.bankofthebest.mypage.loginCheckActivity" />
     </application>
 
 </manifest>

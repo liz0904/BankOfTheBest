@@ -14,11 +14,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.529"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/tmp"
         app:srcCompat="@drawable/login_icon" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tmp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="89dp"
@@ -32,7 +32,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/loginBtn"
+        android:id="@+id/btn_check_pwd"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -46,10 +46,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pwd" />
+        app:layout_constraintTop_toBottomOf="@+id/pwd_check" />
 
     <EditText
-        android:id="@+id/pwd"
+        android:id="@+id/pwd_check"
         android:layout_width="280dp"
         android:layout_height="48dp"
         android:layout_marginStart="24dp"

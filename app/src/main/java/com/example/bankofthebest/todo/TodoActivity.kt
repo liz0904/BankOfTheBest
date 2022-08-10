@@ -35,12 +35,12 @@ class TodoActivity : AppCompatActivity() {
         Realm.getDefaultInstance()
     }
 
-        val realm = try {
+    val realm = try {
             //Realm 인스턴스 얻기
             //오류에 대비하여 예외처리
-            val config = RealmConfiguration.Builder()
-                .deleteRealmIfMigrationNeeded()
-                .build()
+        val config = RealmConfiguration.Builder()
+            .deleteRealmIfMigrationNeeded()
+            .build()
             Realm.getInstance(config)
         } catch (ex: RealmMigrationNeededException) {
         Realm.getDefaultInstance()
@@ -66,7 +66,7 @@ class TodoActivity : AppCompatActivity() {
 
         //할 일 추가 버튼 클릭 리스너
         btn_account_out_in.setOnClickListener { view ->
-            var intent_choice=Intent(this, ChoiceBankActivity::class.java)
+            var intent_choice=Intent(this, EditTodoActivity::class.java)
             intent_choice.putExtra("userid", person!!.id)
             startActivity(intent_choice)
         }

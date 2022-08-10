@@ -4,9 +4,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import com.example.bankofthebest.login.Person
 import com.example.bankofthebest.todo.Todo
 import io.realm.OrderedRealmCollection
+import io.realm.Realm
 import io.realm.RealmBaseAdapter
+import io.realm.RealmConfiguration
+import io.realm.exceptions.RealmMigrationNeededException
+import io.realm.kotlin.where
 
 class TodoListAdapter(realmResult: OrderedRealmCollection<Todo>)
     : RealmBaseAdapter<Todo>(realmResult){//RealmBaseAdapter 상속
@@ -27,9 +32,10 @@ class TodoListAdapter(realmResult: OrderedRealmCollection<Todo>)
         }
         if(adapterData!=null){
             val item=adapterData!![position]
-            vh.textTextView.text=item.title
-            vh.subTextView.text=item.subtitle
-            vh.dateTextView.text = android.text.format.DateFormat.format("yyyy/MM/dd", item.date)
+            vh.account_list_out_number.text=item.account_list_out_number
+            vh.account_list_out_money.text="-"+item.account_list_out_money+"원"
+            vh.account_date.text = android.text.format.DateFormat.format("yyyy/MM/dd", item.date)
+            vh.account_list_money.text=item.usermoney.toString()+"원"
         }
         return view
     }
@@ -44,7 +50,8 @@ class TodoListAdapter(realmResult: OrderedRealmCollection<Todo>)
     }
 }
 class ViewHolder(view: View) {
-    val dateTextView: TextView = view.findViewById(R.id.account_date)
-    val textTextView: TextView = view.findViewById(R.id.account_list_out_money)
-    val subTextView: TextView = view.findViewById(R.id.account_list_out_number)
+    val account_date: TextView = view.findViewById(R.id.account_date)
+    val account_list_out_money: TextView = view.findViewById(R.id.account_list_out_money)
+    val account_list_out_number: TextView = view.findViewById(R.id.account_list_out_number)
+    val account_list_money: TextView = view.findViewById(R.id.account_list_money)
 }
