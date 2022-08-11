@@ -20,6 +20,8 @@ class  JoinActivity : AppCompatActivity(){
     lateinit var joinEmail: EditText
     lateinit var joinIdCheck: Button
     lateinit var joinDone: Button
+    lateinit var joinName:EditText
+    lateinit var joinPhone:EditText
 
 
     val loginRealm = try {
@@ -49,6 +51,8 @@ class  JoinActivity : AppCompatActivity(){
         joinEmail = findViewById(R.id.joinEmail)
         joinIdCheck = findViewById(R.id.joinIdCheck)
         joinDone = findViewById(R.id.joinDone)
+        joinName=findViewById(R.id.joinName)
+        joinPhone=findViewById(R.id.joinPhone)
 
         //아이디 중복확인
         joinIdCheck.setOnClickListener {
@@ -76,20 +80,29 @@ class  JoinActivity : AppCompatActivity(){
 
     fun join() {
         loginRealm?.executeTransactionAsync {
-            if (idCheck&&joinPwd.text.isNotEmpty()) {
-                handler?.post(Runnable {
-                    Toast.makeText(this, "회원가입 성공!", Toast.LENGTH_SHORT).show()
-                })
-                val user = it.createObject(Person::class.java)
-                user.id = joinId.text.toString()
-                user.pwd = joinPwd.text.toString()
-                user.email = joinEmail.text.toString()
+                            if (idCheck&&joinPwd.text.isNotEmpty()&&joinId.text.toString().length>=4&&joinPwd.text.toString().length>=10) {
+                                handler?.post(Runnable {
+                                    Toast.makeText(this, "회원가입 성공!", Toast.LENGTH_SHORT).show()
+                                })
+                                val user = it.createObject(Person::class.java)
+                                user.id = joinId.text.toString()
+                                user.pwd = joinPwd.text.toString()
+                                user.username=joinName.text.toString()
+                                user.email = joinEmail.text.toString()
+                                user.phone=joinPhone.text.toString()
+                                user.account="0904-"+joinPhone.text.toString()
 
-                var intent = Intent(this, LoginActivity::class.java)
-                startActivity(intent)
-            } else {
-                handler?.post(Runnable {
-                    Toast.makeText(this, "아이디/비밀번호를 다시 확인하세요", Toast.LENGTH_SHORT).show()
+                                var intent = Intent(this, LoginActivity::class.java)
+                                startActivity(intent)
+                            } else {
+                                handler?.post(Runnable {
+                                    if(joinId.text.toString().length<4) {
+                                        Toast.makeText(this, "아이디가 너무 짧습니다", Toast.LENGTH_SHORT).show()
+                                    }else if(joinPwd.text.toString().length<10){
+                        Toast.makeText(this, "비밀번호가 너무 짧습니다", Toast.LENGTH_SHORT).show()
+                    }else {
+                        Toast.makeText(this, "아이디/비밀번호를 다시 확인하세요", Toast.LENGTH_SHORT).show()
+                    }
                 })
             }
         }

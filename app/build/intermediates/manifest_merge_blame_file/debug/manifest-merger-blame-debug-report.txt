@@ -1,0 +1,108 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.whisperapp"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="19"
+8-->C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="30" />
+9-->C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:5:5-67
+11-->C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:5:22-64
+12    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+12-->C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:6:5-76
+12-->C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:6:22-73
+13
+14    <application
+14-->C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:8:5-42:19
+15        android:name="com.example.bankofthebest.MyApplication"
+15-->C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:9:9-63
+16        android:allowBackup="true"
+16-->C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:10:9-35
+17        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+17-->[androidx.core:core:1.3.2] C:\Users\liz09\.gradle\caches\transforms-2\files-2.1\9792c56ceef5b5272f5d2a2bdaf443e8\core-1.3.2\AndroidManifest.xml:24:18-86
+18        android:debuggable="true"
+19        android:icon="@mipmap/icon_launcher"
+19-->C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:11:9-45
+20        android:label="BoB"
+20-->C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:12:9-28
+21        android:roundIcon="@mipmap/icon_launcher_round"
+21-->C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:13:9-56
+22        android:supportsRtl="true"
+22-->C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:14:9-35
+23        android:testOnly="true"
+24        android:theme="@style/Theme.WhisperApp" >
+24-->C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:15:9-48
+25        <activity android:name="com.example.bankofthebest.mypage.mypageMainActivity" />
+25-->C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:16:9-97
+25-->C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:16:19-85
+26        <activity android:name="com.example.bankofthebest.todo.EditTodoActivity" />
+26-->C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:17:9-84
+26-->C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:17:19-81
+27        <activity android:name="com.example.bankofthebest.portfolio.PortRegActivity" />
+27-->C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:18:9-88
+27-->C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:18:19-85
+28        <activity android:name="com.example.bankofthebest.portfolio.PortMainActivity" />
+28-->C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:19:9-89
+28-->C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:19:19-86
+29        <activity android:name="com.example.bankofthebest.event.EventItemActivity" />
+29-->C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:20:9-86
+29-->C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:20:19-83
+30        <activity android:name="com.example.bankofthebest.event.WebViewActivity" />
+30-->C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:21:9-84
+30-->C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:21:19-81
+31        <activity android:name="com.example.bankofthebest.event.EventListActivity" />
+31-->C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:22:9-86
+31-->C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:22:19-83
+32        <activity android:name="com.example.bankofthebest.MainActivity" />
+32-->C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:23:9-75
+32-->C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:23:19-72
+33        <activity android:name="com.example.bankofthebest.todo.TodoActivity" />
+33-->C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:24:9-79
+33-->C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:24:19-77
+34        <activity android:name="com.example.bankofthebest.login.JoinActivity" />
+34-->C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:25:9-81
+34-->C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:25:19-78
+35        <activity
+35-->C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:26:9-33:20
+36            android:name="com.example.bankofthebest.SplashActivity"
+36-->C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:26:19-49
+37            android:exported="true"
+37-->C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:28:13-36
+38            android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
+38-->C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:27:13-69
+39            <intent-filter>
+39-->C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:29:13-32:29
+40                <action android:name="android.intent.action.MAIN" />
+40-->C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:30:17-68
+40-->C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:30:25-66
+41
+42                <category android:name="android.intent.category.LAUNCHER" />
+42-->C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:31:17-76
+42-->C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:31:27-74
+43            </intent-filter>
+44        </activity>
+45        <activity android:name="com.example.bankofthebest.login.LoginActivity" >
+45-->C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:34:9-40:20
+45-->C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:34:19-79
+46            <intent-filter>
+46-->C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:29:13-32:29
+47                <action android:name="android.intent.action.MAIN" />
+47-->C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:30:17-68
+47-->C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:30:25-66
+48
+49                <category android:name="android.intent.category.LAUNCHER" />
+49-->C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:31:17-76
+49-->C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:31:27-74
+50            </intent-filter>
+51        </activity>
+52        <activity android:name="com.example.bankofthebest.mypage.loginCheckActivity" />
+52-->C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:41:9-88
+52-->C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:41:19-85
+53    </application>
+54
+55</manifest>

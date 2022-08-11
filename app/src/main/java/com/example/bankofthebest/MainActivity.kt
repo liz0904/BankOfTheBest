@@ -24,10 +24,11 @@ import io.realm.kotlin.createObject
 import io.realm.kotlin.where
 import org.jetbrains.anko.startActivity
 
+
 class MainActivity : AppCompatActivity() {
 
     // 변수 선언
-    lateinit var todoDateTextView : TextView
+    lateinit var text_account_number : TextView
     lateinit var todoTitleTextView : TextView
     lateinit var todoSubtitleTextView : TextView
     lateinit var btn_refresh : ImageButton
@@ -69,7 +70,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         // activity_main.xml의 변수 id 연결
-        todoDateTextView = findViewById(R.id.text_account_number)
+        text_account_number = findViewById(R.id.text_account_number)
         todoTitleTextView = findViewById(R.id.text_account_list_name)
         todoSubtitleTextView = findViewById(R.id.text_account_list_money)
         text_user = findViewById(R.id.text_user)
@@ -88,8 +89,9 @@ class MainActivity : AppCompatActivity() {
         val userid=intent.getStringExtra("userid")
         val person = realm.where<Person>().equalTo("id", userid).findFirst()
         if (person != null) {
-            text_user.text = person.id
-            person.account="3333-08-1234567"
+            text_user.text = person.username
+            text_account_number.text=person.account
+
         }
 
         // portDB에 기본 데이터 저장
@@ -121,8 +123,6 @@ class MainActivity : AppCompatActivity() {
         if (minId2 == null) {
             val newItem10 = realm2.createObject<Todo>(nextId_todo())
             newItem10.date = 1641794919192
-            //newItem10.title = "계좌"
-            //newItem10.subtitle = "알고리즘 풀기\n백준 코딩테스트하기"
         }
         refreshTodo(person!!.id)   // 메인 페이지에 체크리스트 목록 중 날짜가 가장 빠른 데이터를 보여줌
 
@@ -237,7 +237,7 @@ class MainActivity : AppCompatActivity() {
         val realmResultmain1 = realmResult_main
 
         if (realmResultmain1 != null) {
-            todoDateTextView.text = realmResult_main.account
+            text_account_number.text = realmResult_main.account
             todoTitleTextView.text = "급여통장"
             todoSubtitleTextView.text =realmResult_main.money.toString()+"원"
             textview_money_saving.text=realmResult_main.saving_money.toString()+"원"
@@ -250,7 +250,7 @@ class MainActivity : AppCompatActivity() {
         realm.beginTransaction()
 
         if (realmResult_main != null) {
-            todoDateTextView.text = realmResult_main.account
+            text_account_number.text = realmResult_main.account
             todoTitleTextView.text = "급여통장"
             realmResult_main.saving_money+=realmResult_main.money%1000
             realmResult_main.money-=realmResult_main.money%1000
@@ -268,7 +268,7 @@ class MainActivity : AppCompatActivity() {
         realm.beginTransaction()
 
         if (realmResult_main != null) {
-            todoDateTextView.text = realmResult_main.account
+            text_account_number.text = realmResult_main.account
             todoTitleTextView.text = "급여통장"
             realmResult_main.money+=realmResult_main.saving_money
             realmResult_main.saving_money=0

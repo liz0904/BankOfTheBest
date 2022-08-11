@@ -210,7 +210,6 @@
             android:layout_marginBottom="32dp"
             android:text="공지사항"
             android:textAlignment="center"
-            android:textColor="#FFFFFF"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -236,7 +235,6 @@
             android:layout_marginBottom="32dp"
             android:text="마이페이지"
             android:textAlignment="center"
-            android:textColor="#FFFFFF"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
