@@ -182,7 +182,7 @@ class MainActivity : AppCompatActivity() {
         btn_goto_saving.setOnClickListener {
             //저금통으로 정리 오케이? 띄우고 예 하면 금액 변경
             var dialog = AlertDialog.Builder(this)
-            dialog.setTitle(" 저금통을 해지하시겠습니까? ")
+            dialog.setTitle(" 계좌를 정리하시겠습니까? ")
             dialog.setMessage("확인 버튼을 누르실 경우,\n1000원 이하의 금액이 저금통으로 이체됩니다.")
             dialog.setIcon(R.mipmap.icon_launcher)
 
