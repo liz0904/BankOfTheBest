@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:2:1-44:12
-INJECTED from C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:2:1-44:12
-INJECTED from C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:2:1-44:12
-INJECTED from C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:2:1-44:12
+ADDED from C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:2:1-38:12
+INJECTED from C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:2:1-38:12
+INJECTED from C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:2:1-38:12
+INJECTED from C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:2:1-38:12
 MERGED from [io.realm:realm-android-library:6.0.0] C:\Users\liz09\.gradle\caches\transforms-2\files-2.1\32c2a9cf17fe6431da5efb8279b50dd5\jetified-realm-android-library-6.0.0\AndroidManifest.xml:2:1-10:12
 MERGED from [io.realm:realm-android-kotlin-extensions:6.0.0] C:\Users\liz09\.gradle\caches\transforms-2\files-2.1\e557d4081aa8fd1914a78248560f7927\jetified-realm-android-kotlin-extensions-6.0.0\AndroidManifest.xml:2:1-10:12
 MERGED from [org.jetbrains.anko:anko:0.10.8] C:\Users\liz09\.gradle\caches\transforms-2\files-2.1\fb780dee4f9b3a7a0db4060e6bf087fe\jetified-anko-0.10.8\AndroidManifest.xml:2:1-13:12
@@ -77,20 +77,20 @@ MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\liz09\.gradle\ca
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\liz09\.gradle\caches\transforms-2\files-2.1\255a50c0bb380835b0c5361983cf6d18\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] C:\Users\liz09\.gradle\caches\transforms-2\files-2.1\6b5add4dfe8a446c113ca1bc0b4e2acb\print-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\liz09\.gradle\caches\transforms-2\files-2.1\5b150f53ba48357ce3fddc4037d92e3a\jetified-annotation-experimental-1.0.0\AndroidManifest.xml:17:1-24:12
-INJECTED from C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:2:1-44:12
-INJECTED from C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:2:1-44:12
-INJECTED from C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:2:1-44:12
+INJECTED from C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:2:1-38:12
+INJECTED from C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:2:1-38:12
+INJECTED from C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:2:1-38:12
 	package
 		ADDED from C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:3:5-40
 		INJECTED from C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:2:1-44:12
+		ADDED from C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:2:1-38:12
 		INJECTED from C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:2:1-44:12
+		ADDED from C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:2:1-38:12
 		INJECTED from C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:2:11-69
@@ -103,7 +103,7 @@ ADDED from C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\Andro
 	android:name
 		ADDED from C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:6:22-73
 application
-ADDED from C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:8:5-42:19
+ADDED from C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:8:5-36:19
 MERGED from [org.jetbrains.anko:anko:0.10.8] C:\Users\liz09\.gradle\caches\transforms-2\files-2.1\fb780dee4f9b3a7a0db4060e6bf087fe\jetified-anko-0.10.8\AndroidManifest.xml:11:5-20
 MERGED from [org.jetbrains.anko:anko:0.10.8] C:\Users\liz09\.gradle\caches\transforms-2\files-2.1\fb780dee4f9b3a7a0db4060e6bf087fe\jetified-anko-0.10.8\AndroidManifest.xml:11:5-20
 MERGED from [org.jetbrains.anko:anko-sqlite:0.10.8] C:\Users\liz09\.gradle\caches\transforms-2\files-2.1\a70e3881220e2828a8aeb6e7730ea64e\jetified-anko-sqlite-0.10.8\AndroidManifest.xml:11:5-20
@@ -209,13 +209,13 @@ ADDED from C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\Andro
 	android:name
 		ADDED from C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:31:27-74
 activity#com.example.bankofthebest.login.LoginActivity
-ADDED from C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:34:9-40:20
+ADDED from C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:34:9-91
 	android:name
 		ADDED from C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:34:19-79
 activity#com.example.bankofthebest.mypage.loginCheckActivity
-ADDED from C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:41:9-88
+ADDED from C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:35:9-88
 	android:name
-		ADDED from C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:41:19-85
+		ADDED from C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:35:19-85
 uses-sdk
 INJECTED from C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml

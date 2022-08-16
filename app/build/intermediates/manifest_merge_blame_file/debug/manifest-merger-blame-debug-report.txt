@@ -18,7 +18,7 @@
 12-->C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:6:22-73
 13
 14    <application
-14-->C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:8:5-42:19
+14-->C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:8:5-36:19
 15        android:name="com.example.bankofthebest.MyApplication"
 15-->C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:9:9-63
 16        android:allowBackup="true"
@@ -86,23 +86,12 @@
 42-->C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:31:27-74
 43            </intent-filter>
 44        </activity>
-45        <activity android:name="com.example.bankofthebest.login.LoginActivity" >
-45-->C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:34:9-40:20
+45        <activity android:name="com.example.bankofthebest.login.LoginActivity" />
+45-->C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:34:9-91
 45-->C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:34:19-79
-46            <intent-filter>
-46-->C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:29:13-32:29
-47                <action android:name="android.intent.action.MAIN" />
-47-->C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:30:17-68
-47-->C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:30:25-66
+46        <activity android:name="com.example.bankofthebest.mypage.loginCheckActivity" />
+46-->C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:35:9-88
+46-->C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:35:19-85
+47    </application>
 48
-49                <category android:name="android.intent.category.LAUNCHER" />
-49-->C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:31:17-76
-49-->C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:31:27-74
-50            </intent-filter>
-51        </activity>
-52        <activity android:name="com.example.bankofthebest.mypage.loginCheckActivity" />
-52-->C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:41:9-88
-52-->C:\Users\liz09\AndroidStudioProjects\BankOfTheBest\app\src\main\AndroidManifest.xml:41:19-85
-53    </application>
-54
-55</manifest>
+49</manifest>
